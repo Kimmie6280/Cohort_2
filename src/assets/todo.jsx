@@ -15,6 +15,7 @@ function ToDoList(){
         if (newTask.trim() != ""){
             setTasks(t => [...tasks,newTask])
             setNewTask("")
+            alert("You have added a task ")
         }
        
     }
@@ -23,6 +24,8 @@ function ToDoList(){
 
         const updateTask = tasks.filter((element, i) =>i !== index);
         setTasks(updateTask)
+        alert("You have removed a task")
+
     }
 
     function moveTaskUp(index){
@@ -33,6 +36,9 @@ function ToDoList(){
             [updatedTask[index-1], updatedTask[index]]
             setTasks(updatedTask)
             console.log("clicked up")
+            alert("You have moved a task up ")
+
+
         
         }
     }
@@ -45,7 +51,7 @@ function ToDoList(){
             [updatedTask[index], updatedTask[index+1]] = 
             [updatedTask[index+1], updatedTask[index]]
             setTasks(updatedTask)
-            console.log("clicked up")
+            alert("You have moved a task down")
         
         }
     }
@@ -87,6 +93,7 @@ function ToDoList(){
                     </li>
                 )}
             </ol>
+
 
         </div>
     )
